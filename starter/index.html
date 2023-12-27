@@ -10,6 +10,8 @@
   </head>
 
   <body>
+    <audio src="./assets/sfx/correct.wav" class="hide correct"></audio>
+    <audio src="./assets/sfx/incorrect.wav" class="hide incorrect"></audio>
     <div class="scores"><a href="highscores.html">View Highscores</a></div>
 
     <div class="timer">Time: <span id="time">0</span></div>
@@ -28,6 +30,9 @@
       <div id="questions" class="hide">
         <h2 id="question-title"></h2>
         <div id="choices" class="choices">
+          <button class="answer button">Answer 1</button>
+          <button class="answer button">Answer 2</button>
+          <button class="answer button">Answer 3</button>
         </div>
         <button id="next">Next Question</button>
       </div>

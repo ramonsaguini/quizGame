@@ -4,6 +4,7 @@ const choicesContainer = document.querySelector('#choices');
 const questionTitle = document.querySelector('#question-title');
 const btnNextQuestion = document.querySelector('#next')
 const timer = document.querySelector('#time')
+const audioIncorrect = document.querySelector('#incorrect')
 
 
 startGameBtn.addEventListener("click", startGame);
@@ -62,22 +63,28 @@ function resetState() {
 }
 
 
+
 function selectAnswer(event) {
   const answerClicked = event.target
 
   if (answerClicked.dataset.correct) {
-    alert("Correct");
+    const audioCorrect = document.querySelector('.correct');
+    audioCorrect.play()
     correctAnswer++;
-    seconds = seconds - 5
+    seconds = seconds - 5;
+
 
   } else {
-    alert("Wrong");
+    const audioIncorrect = document.querySelector('.incorrect');
+    audioIncorrect.play()
     seconds = seconds + 2
   }
 
   document.querySelectorAll(".answer").forEach(button => {
     if (button.dataset.correct) {
       button.classList.add("correct")
+
+
     } else {
       button.classList.add("incorrect")
     }

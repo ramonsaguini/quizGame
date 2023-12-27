@@ -14,24 +14,29 @@ a:hover {
 }
 
 button {
-  display: inline-block;
-  margin: 5px;
   cursor: pointer;
-  font-size: 100%;
-  background-color: #563d7c;
-  border-radius: 5px;
-  padding: 2px 10px;
-  color: white;
-  border: 0;
-  transition: background-color 0.1s;
+  font-size: 20px;
+  background-color: #d6c7ec;
+  transition: background-color 0.5s;
+  width: 80%;
+  height: 50px;
+  color: black;
+  border-radius: 50px;
+  border: 2px solid black;
+  box-shadow: 2px 5px 5px;
+  margin: 20px;
+}
+
+#questions{
+  text-align: center;
+  padding: 10px;
+  background-color: #12d8e7;
+  box-shadow: 10px 5px 5px black;
+  border-radius: 50px;
 }
 
 button:hover {
-  background-color: #8570a5;
-}
-
-.choices button {
-  display: block;
+  background-color: #49ca09;
 }
 
 input[type="text"] {
@@ -88,7 +93,7 @@ li:nth-child(odd) {
 }
 
 .correct{
-  background-color: green;
+  background-color: #49ca09;
 }
 .incorrect{
   background-color: red;
