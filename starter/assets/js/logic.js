@@ -43,6 +43,14 @@ function selectAnswer(event) {
     alert("Wrong")
   }
 
+  document.querySelectorAll(".answer").forEach(button => {
+    if (button.dataset.correct) {
+      button.classList.add("correct")
+    } else {
+      button.classList.add("incorrect")
+    }
+  })
+
 }
 
 
