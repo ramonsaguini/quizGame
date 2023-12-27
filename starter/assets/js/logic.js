@@ -3,6 +3,8 @@ const questionContainer = document.querySelector('#questions');
 const choicesContainer = document.querySelector('#choices');
 const questionTitle = document.querySelector('#question-title');
 const btnNextQuestion = document.querySelector('#next')
+const timer = document.querySelector('#time')
+
 
 startGameBtn.addEventListener("click", startGame);
 btnNextQuestion.addEventListener("click", displayNextQuestion)
@@ -11,10 +13,24 @@ let currentQuestIndex = 0
 let correctAnswer = 0
 
 
+let timerInterval;
+let seconds = 0;
+
+function startTimer() {
+  timerInterval = setInterval(updateTimer, 1000);
+}
+
+function updateTimer() {
+  seconds++;
+  document.getElementById("time").textContent = seconds
+}
+//! Start Game
+
 function startGame() {
   startGameBtn.classList.add("hide");
   questionContainer.classList.remove("hide");
   displayNextQuestion();
+  startTimer();
 }
 
 
@@ -51,10 +67,12 @@ function selectAnswer(event) {
 
   if (answerClicked.dataset.correct) {
     alert("Correct");
-    correctAnswer++
+    correctAnswer++;
+    seconds = seconds - 5
 
   } else {
-    alert("Wrong")
+    alert("Wrong");
+    seconds = seconds + 2
   }
 
   document.querySelectorAll(".answer").forEach(button => {
@@ -100,10 +118,6 @@ function endGame() {
 `
 }
 
-
-
-
-
 const question = [
   {
     question: "Maths Calc: 10 x 15 ",
@@ -140,9 +154,9 @@ const question = [
   {
     question: " A small truck can carry 50 bags of sand or 400 bricks. If 32 bags of sand were placed in the truck, how many bricks can it carry? ",
     answers: [
-      { option: "1", correct: true },
-      { option: "2", correct: false },
-      { option: "3", correct: false },
+      { option: "368", correct: true },
+      { option: "286", correct: false },
+      { option: "826", correct: false },
     ],
   },
 ]
