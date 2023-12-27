@@ -49,6 +49,7 @@ function selectAnswer(event) {
     } else {
       button.classList.add("incorrect")
     }
+    button.disabled = true
   })
 
 }
