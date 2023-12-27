@@ -21,6 +21,8 @@ function displayNextQuestion() {
   while (choicesContainer.firstChild) {
     choicesContainer.removeChild(choicesContainer.firstChild)
   }
+  btnNextQuestion.classList.add("hide")
+
   questionTitle.textContent = question[currentQuestIndex].question;
   question[currentQuestIndex].answers.forEach(answer => {
     const newAnswer = document.createElement("button")
@@ -52,7 +54,7 @@ function selectAnswer(event) {
     }
     button.disabled = true
   })
-
+  btnNextQuestion.classList.remove("hide")
   currentQuestIndex++
 }
 
