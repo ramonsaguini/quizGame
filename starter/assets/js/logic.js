@@ -8,6 +8,7 @@ startGameBtn.addEventListener("click", startGame);
 btnNextQuestion.addEventListener("click", displayNextQuestion)
 
 let currentQuestIndex = 0
+let correctAnswer = 0
 
 
 function startGame() {
@@ -19,6 +20,11 @@ function startGame() {
 
 function displayNextQuestion() {
   resetState()
+
+  if (question.length === currentQuestIndex) {
+    return endGame()
+  }
+
   questionTitle.textContent = question[currentQuestIndex].question;
   question[currentQuestIndex].answers.forEach(answer => {
     const newAnswer = document.createElement("button")
@@ -44,7 +50,8 @@ function selectAnswer(event) {
   const answerClicked = event.target
 
   if (answerClicked.dataset.correct) {
-    alert("Correct")
+    alert("Correct");
+    correctAnswer++
 
   } else {
     alert("Wrong")
@@ -61,6 +68,39 @@ function selectAnswer(event) {
   btnNextQuestion.classList.remove("hide")
   currentQuestIndex++
 }
+
+function endGame() {
+  const totQuest = question.length;
+  const perform = Math.floor(correctAnswer * 100 / totQuest);
+
+  let message = "";
+
+  switch (true) {
+
+    case (perform >= 90):
+      message = "Excellent"
+      break
+
+    case (perform >= 70):
+      message = "Very Good"
+      break
+
+    case (perform >= 50):
+      message = "Good"
+      break
+
+    default:
+      message = "you can improve next time"
+  }
+  questionContainer.innerHTML =
+    `<p> Correct Answers: ${correctAnswer} of ${totQuest} Questions! <br>
+<span> Result: ${message} </span>
+</p>
+<button> Restart Quiz </button>
+`
+}
+
+
 
 
 
@@ -81,29 +121,29 @@ const question = [
       { option: "12", correct: true },
     ],
   },
-  {
-    question: "Maths Calc: 13% of 100 ",
-    answers: [
-      { option: "1.30", correct: false },
-      { option: "13", correct: true },
-      { option: "0.13", correct: false },
-    ],
-  },
-  {
-    question: "In which alternative are there three eights, three zero? ",
-    answers: [
-      { option: "3830", correct: false },
-      { option: "88830", correct: true },
-      { option: "383000", correct: false },
-    ],
-  },
-  {
-    question: " A small truck can carry 50 bags of sand or 400 bricks. If 32 bags of sand were placed in the truck, how many bricks can it carry? ",
-    answers: [
-      { option: "1", correct: true },
-      { option: "2", correct: false },
-      { option: "3", correct: false },
-    ],
-  },
+  // {
+  //   question: "Maths Calc: 13% of 100 ",
+  //   answers: [
+  //     { option: "1.30", correct: false },
+  //     { option: "13", correct: true },
+  //     { option: "0.13", correct: false },
+  //   ],
+  // },
+  // {
+  //   question: "In which alternative are there three eights, three zero? ",
+  //   answers: [
+  //     { option: "3830", correct: false },
+  //     { option: "88830", correct: true },
+  //     { option: "383000", correct: false },
+  //   ],
+  // },
+  // {
+  //   question: " A small truck can carry 50 bags of sand or 400 bricks. If 32 bags of sand were placed in the truck, how many bricks can it carry? ",
+  //   answers: [
+  //     { option: "1", correct: true },
+  //     { option: "2", correct: false },
+  //     { option: "3", correct: false },
+  //   ],
+  // },
 ]
 
