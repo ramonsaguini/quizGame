@@ -1,5 +1,10 @@
 const startGameBtn = document.querySelector('#start-screen');
 const questionContainer = document.querySelector('#questions');
+const choicesContainer = document.querySelector('#choices');
+const questionTitle = document.querySelector('#question-title');
+
+
+let currentQuestIndex = 0;
 
 
 startGameBtn.addEventListener("click", startGame);
@@ -7,8 +12,17 @@ startGameBtn.addEventListener("click", startGame);
 function startGame() {
   startGameBtn.classList.add("hide");
   questionContainer.classList.remove("hide");
-
+  displayNextQuestion();
 }
+
+
+function displayNextQuestion() {
+  while (choicesContainer.firstChild) {
+    choicesContainer.removeChild(choicesContainer.firstChild)
+  }
+  questionTitle.textContent = question[currentQuestIndex].question
+}
+
 
 const question = [
   {
