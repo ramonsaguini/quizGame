@@ -2,12 +2,13 @@ const startGameBtn = document.querySelector('#start-screen');
 const questionContainer = document.querySelector('#questions');
 const choicesContainer = document.querySelector('#choices');
 const questionTitle = document.querySelector('#question-title');
-
-
-let currentQuestIndex = 0;
-
+const btnNextQuestion = document.querySelector('#next')
 
 startGameBtn.addEventListener("click", startGame);
+btnNextQuestion.addEventListener("click", displayNextQuestion)
+
+let currentQuestIndex = 0
+
 
 function startGame() {
   startGameBtn.classList.add("hide");
@@ -52,6 +53,7 @@ function selectAnswer(event) {
     button.disabled = true
   })
 
+  currentQuestIndex++
 }
 
 
@@ -92,9 +94,9 @@ const question = [
   {
     question: " A small truck can carry 50 bags of sand or 400 bricks. If 32 bags of sand were placed in the truck, how many bricks can it carry? ",
     answers: [
-      { option: "", correct: true },
-      { option: "", correct: false },
-      { option: "", correct: false },
+      { option: "1", correct: true },
+      { option: "2", correct: false },
+      { option: "3", correct: false },
     ],
   },
 ]
