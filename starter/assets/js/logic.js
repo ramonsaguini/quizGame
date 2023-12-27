@@ -91,6 +91,8 @@ function endGame() {
   const totQuest = question.length;
   const perform = Math.floor(correctAnswer * 100 / totQuest);
 
+  clearInterval(timerInterval);
+
   let message = "";
 
   switch (true) {
@@ -111,7 +113,7 @@ function endGame() {
       message = "you can improve next time"
   }
   questionContainer.innerHTML =
-    `<p> Correct Answers: ${correctAnswer} of ${totQuest} Questions! <br>
+    `<p> Correct Answers: ${correctAnswer} of ${totQuest} Questions in ${seconds} seconds! <br>
 <span> Result: ${message} </span>
 </p>
 <button onclick=window.location.reload()> Restart Quiz </button>
@@ -122,6 +124,7 @@ const question = [
   {
     question: "Maths Calc: 10 x 15 ",
     answers: [
+      { option: "500", correct: false },
       { option: " 150", correct: true },
       { option: "1500", correct: false },
       { option: "15000", correct: false },
@@ -130,8 +133,9 @@ const question = [
   {
     question: "Maths Calc: 24 / 2 ",
     answers: [
-      { option: "6", correct: false },
+      { option: "9", correct: false },
       { option: "10", correct: false },
+      { option: "11", correct: false },
       { option: "12", correct: true },
     ],
   },
@@ -139,6 +143,7 @@ const question = [
     question: "Maths Calc: 13% of 100 ",
     answers: [
       { option: "1.30", correct: false },
+      { option: "13.0", correct: false },
       { option: "13", correct: true },
       { option: "0.13", correct: false },
     ],
@@ -148,6 +153,7 @@ const question = [
     answers: [
       { option: "3830", correct: false },
       { option: "88830", correct: true },
+      { option: "38300", correct: false },
       { option: "383000", correct: false },
     ],
   },
@@ -155,6 +161,7 @@ const question = [
     question: " A small truck can carry 50 bags of sand or 400 bricks. If 32 bags of sand were placed in the truck, how many bricks can it carry? ",
     answers: [
       { option: "368", correct: true },
+      { option: "226", correct: false },
       { option: "286", correct: false },
       { option: "826", correct: false },
     ],
