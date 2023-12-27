@@ -18,7 +18,7 @@ function startGame() {
 
 
 function displayNextQuestion() {
-  resetStates()
+  resetState()
   questionTitle.textContent = question[currentQuestIndex].question;
   question[currentQuestIndex].answers.forEach(answer => {
     const newAnswer = document.createElement("button")
@@ -32,12 +32,13 @@ function displayNextQuestion() {
   })
 }
 
-function resetStates() {
+function resetState() {
   while (choicesContainer.firstChild) {
     choicesContainer.removeChild(choicesContainer.firstChild)
   }
   btnNextQuestion.classList.add("hide")
 }
+
 
 function selectAnswer(event) {
   const answerClicked = event.target
