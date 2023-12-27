@@ -29,8 +29,22 @@ function displayNextQuestion() {
       newAnswer.dataset.correct = answer.correct
     }
     choicesContainer.appendChild(newAnswer)
+    newAnswer.addEventListener("click", selectAnswer)
   })
 }
+
+function selectAnswer(event) {
+  const answerClicked = event.target
+
+  if (answerClicked.dataset.correct) {
+    alert("Correct")
+
+  } else {
+    alert("Wrong")
+  }
+
+}
+
 
 
 const question = [
