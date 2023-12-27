@@ -96,7 +96,7 @@ function endGame() {
     `<p> Correct Answers: ${correctAnswer} of ${totQuest} Questions! <br>
 <span> Result: ${message} </span>
 </p>
-<button> Restart Quiz </button>
+<button onclick=window.location.reload()> Restart Quiz </button>
 `
 }
 
@@ -121,29 +121,29 @@ const question = [
       { option: "12", correct: true },
     ],
   },
-  // {
-  //   question: "Maths Calc: 13% of 100 ",
-  //   answers: [
-  //     { option: "1.30", correct: false },
-  //     { option: "13", correct: true },
-  //     { option: "0.13", correct: false },
-  //   ],
-  // },
-  // {
-  //   question: "In which alternative are there three eights, three zero? ",
-  //   answers: [
-  //     { option: "3830", correct: false },
-  //     { option: "88830", correct: true },
-  //     { option: "383000", correct: false },
-  //   ],
-  // },
-  // {
-  //   question: " A small truck can carry 50 bags of sand or 400 bricks. If 32 bags of sand were placed in the truck, how many bricks can it carry? ",
-  //   answers: [
-  //     { option: "1", correct: true },
-  //     { option: "2", correct: false },
-  //     { option: "3", correct: false },
-  //   ],
-  // },
+  {
+    question: "Maths Calc: 13% of 100 ",
+    answers: [
+      { option: "1.30", correct: false },
+      { option: "13", correct: true },
+      { option: "0.13", correct: false },
+    ],
+  },
+  {
+    question: "In which alternative are there three eights, three zero? ",
+    answers: [
+      { option: "3830", correct: false },
+      { option: "88830", correct: true },
+      { option: "383000", correct: false },
+    ],
+  },
+  {
+    question: " A small truck can carry 50 bags of sand or 400 bricks. If 32 bags of sand were placed in the truck, how many bricks can it carry? ",
+    answers: [
+      { option: "1", correct: true },
+      { option: "2", correct: false },
+      { option: "3", correct: false },
+    ],
+  },
 ]
 
