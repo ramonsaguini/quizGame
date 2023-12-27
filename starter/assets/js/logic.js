@@ -18,11 +18,7 @@ function startGame() {
 
 
 function displayNextQuestion() {
-  while (choicesContainer.firstChild) {
-    choicesContainer.removeChild(choicesContainer.firstChild)
-  }
-  btnNextQuestion.classList.add("hide")
-
+  resetStates()
   questionTitle.textContent = question[currentQuestIndex].question;
   question[currentQuestIndex].answers.forEach(answer => {
     const newAnswer = document.createElement("button")
@@ -34,6 +30,13 @@ function displayNextQuestion() {
     choicesContainer.appendChild(newAnswer)
     newAnswer.addEventListener("click", selectAnswer)
   })
+}
+
+function resetStates() {
+  while (choicesContainer.firstChild) {
+    choicesContainer.removeChild(choicesContainer.firstChild)
+  }
+  btnNextQuestion.classList.add("hide")
 }
 
 function selectAnswer(event) {
