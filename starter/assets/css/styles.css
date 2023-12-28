@@ -13,7 +13,7 @@ a:hover {
   color: #8570a5;
 }
 
-.container-head{
+.container-head{ /* index*/
   display: flex;
   height: 120px;
 }
@@ -33,7 +33,7 @@ button {
   margin: 20px;
 }
 
-#questions, #end-screen{
+#questions, #end-screen{ /* index*/
   text-align: center;
   padding: 10px;
   background-color: #12d8e7;
@@ -60,46 +60,40 @@ li {
   list-style: decimal inside none;
 }
 
-li:nth-child(odd) {
-  background-color: #f3edfc;
+li:nth-child(odd) { /* scores*/
+  background-color: #e2ebf3;
 }
 
-.wrapper {
+.wrapper {/* scores*/
   margin: 100px auto 0 auto;
   max-width: 600px;
   text-align: center;
-  padding: 0px;
+  padding: 10px;
   background-color: #12d8e7;
   box-shadow: 10px 5px 5px black;
   border-radius: 50px;
+}
+#high-scores{
+  text-align: center;
 }
 
 .hide {
   display: none;
 }
 
-.start {
+.start {/* index*/
   text-align: center;
 }
 
-.feedback {
-  font-style: italic;
-  font-size: 120%;
-  margin-top: 20px;
-  padding-top: 10px;
-  color: gray;
-  border-top: 2px solid #ccc;
-}
-
-.timer {
+.timer {/* index*/
   position: absolute;
   top: 10px;
   right: 10px;
 }
 
-.correct{
+.correct{/* index*/
   background-color: #49ca09;
 }
-.incorrect{
+.incorrect{/* index*/
   background-color: red;
 }
