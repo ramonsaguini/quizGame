@@ -33,13 +33,6 @@ button {
   margin: 20px;
 }
 
-#questions, #end-screen{ /* index*/
-  text-align: center;
-  padding: 10px;
-  background-color: #12d8e7;
-  box-shadow: 10px 5px 5px black;
-  border-radius: 50px;
-}
 
 button:hover {
   background-color: #49ca09;

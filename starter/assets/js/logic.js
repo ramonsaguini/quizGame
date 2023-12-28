@@ -144,28 +144,26 @@ function endGame() {
   const submitButton = document.querySelector('#submit');
 
   submitButton.addEventListener('click', function () {
-
     const initials = initialsInput.value.trim().toUpperCase();
 
-    if (initials) {
-      const oldScores = JSON.parse(localStorage.getItem('scores')) || [];
-      const newScore = {
-        playerName: initials,
-        score: correctAnswer,
-        totalQuestions: totQuest,
-        time: seconds,
-        message: message,
-      };
-      oldScores.push(newScore);
-      localStorage.setItem('scores', JSON.stringify(oldScores));
+    if (!initials) {
+      alert("Please. insert your Initial!");
+      return;
     }
+
+    const oldScores = JSON.parse(localStorage.getItem('scores')) || [];
+    const newScore = {
+      playerName: initials,
+      score: correctAnswer,
+      totalQuestions: totQuest,
+      time: seconds,
+      message: message,
+    };
+    oldScores.push(newScore);
+    localStorage.setItem('scores', JSON.stringify(oldScores));
     window.location.reload();
   });
 }
-
-
-
-
 
 const question = [
   {
