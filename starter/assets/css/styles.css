@@ -13,6 +13,12 @@ a:hover {
   color: #8570a5;
 }
 
+.container-head{
+  display: flex;
+  height: 120px;
+}
+
+
 button {
   cursor: pointer;
   font-size: 20px;
@@ -27,7 +33,7 @@ button {
   margin: 20px;
 }
 
-#questions{
+#questions, #end-screen{
   text-align: center;
   padding: 10px;
   background-color: #12d8e7;
