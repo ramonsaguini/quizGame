@@ -132,26 +132,38 @@ function endGame() {
   questionContainer.classList.add("hide")
   finalScore.classList.remove("hide")
   finalScore.innerHTML =
-    `<h2>All done!</h2>
-      <p>Your final score is ${correctAnswer} of ${totQuest} Questions in ${(seconds)} seconds! <br>
-<h3> ${message} </h3>
-</p>
-<p>
-        Enter initials: <input type="text" id="initials" max="3" />
-        <button id="submit">Submit</button>
-      </p>
+    ` <h2>All done!</h2>
+    <p>Your final score is ${correctAnswer} of ${totQuest} Questions in ${(seconds)} seconds! <br>
+    <h3> ${message} </h3></p>
+    <p>Enter initials: <input type="text" id="initials" max="3">
+    <button id="submit">Submit</button></p>`;
 
+  //! ////////////Local Storage //! ////////////
 
-<button onclick=window.location.reload()> Restart Quiz </button>
-`;
+  const initialsInput = document.querySelector('#initials');
+  const submitButton = document.querySelector('#submit');
 
-  // localStorage.setItem("name", playerName);
-  // const playerName = document.querySelector('#')
+  submitButton.addEventListener('click', function () {
 
-  // console.log(datass)
+    const initials = initialsInput.value.trim().toUpperCase();
+
+    if (initials) {
+      const oldScores = JSON.parse(localStorage.getItem('scores')) || [];
+      const newScore = {
+        playerName: initials,
+        score: correctAnswer,
+        totalQuestions: totQuest,
+        time: seconds,
+        message: message,
+      };
+      oldScores.push(newScore);
+      localStorage.setItem('scores', JSON.stringify(oldScores));
+    }
+    window.location.reload();
+  });
 }
 
-//! ////////////Local Storage //! ////////////
+
 
 
 

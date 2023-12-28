@@ -67,6 +67,11 @@ li:nth-child(odd) {
 .wrapper {
   margin: 100px auto 0 auto;
   max-width: 600px;
+  text-align: center;
+  padding: 0px;
+  background-color: #12d8e7;
+  box-shadow: 10px 5px 5px black;
+  border-radius: 50px;
 }
 
 .hide {
@@ -75,12 +80,6 @@ li:nth-child(odd) {
 
 .start {
   text-align: center;
-}
-
-.scores {
-  position: absolute;
-  top: 10px;
-  left: 10px;
 }
 
 .feedback {
