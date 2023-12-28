@@ -79,7 +79,7 @@ function selectAnswer(event) {
     const audioCorrect = document.querySelector('.correct');
     audioCorrect.play()
     correctAnswer++;
-    seconds = seconds - 5;
+    seconds = seconds - 2;
 
 
   } else {
@@ -209,6 +209,60 @@ const question = [
       { option: "226", correct: false },
       { option: "286", correct: false },
       { option: "826", correct: false },
+    ],
+  },
+  {
+    question: " What is the sum of 8 + 6?",
+    answers: [
+      { option: "16", correct: false },
+      { option: "12", correct: false },
+      { option: "14", correct: true },
+      { option: "18", correct: false },
+    ],
+  },
+  {
+    question: " What is 5 multiplied by 9?",
+    answers: [
+      { option: "35", correct: false },
+      { option: "55", correct: false },
+      { option: "45", correct: true },
+      { option: "50", correct: false },
+    ],
+  },
+  {
+    question: " What is the square root of 81?",
+    answers: [
+      { option: "8", correct: false },
+      { option: "9", correct: true },
+      { option: "7", correct: false },
+      { option: "6", correct: false },
+    ],
+  },
+  {
+    question: "If x = 3, what is the value of 2x - 5?  ",
+    answers: [
+      { option: "1", correct: false },
+      { option: "5", correct: false },
+      { option: "7", correct: false },
+      { option: "3", correct: true },
+    ],
+  },
+  {
+    question: " What is 15 divided by 3?",
+    answers: [
+      { option: "8", correct: false },
+      { option: "15", correct: false },
+      { option: "5", correct: true },
+      { option: "18", correct: false },
+    ],
+  },
+  {
+    question: " What is the result of 4 squared? ",
+    answers: [
+      { option: "8", correct: false },
+      { option: "12", correct: false },
+      { option: "20", correct: false },
+      { option: "16", correct: true },
     ],
   },
 ]
